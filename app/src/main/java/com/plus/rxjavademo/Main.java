@@ -9,6 +9,7 @@ public class Main {
     private static int sum = 3;//台阶数
     private static int deep = 3;//一次跳的阶数
     private static int total = 0;//总跳法
+    private int mTest = 0x0001;
 
     public static void main(String[] args){
         doComputeDeep(sum, "");
