@@ -11,10 +11,12 @@ import com.plus.rxjavademo.mvp.view.ThemeMvpView;
 
 import java.util.List;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity implements ThemeMvpView{
 
+    @Bind(R.id.tv_themes_size)
     TextView textView;
 
     private ThemeListPresenter themeListPresenter;
@@ -23,7 +25,7 @@ public class MainActivity extends AppCompatActivity implements ThemeMvpView{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-       ButterKnife.bind(this);
+        ButterKnife.bind(this);
 
         themeListPresenter = new ThemeListPresenter();
         themeListPresenter.attachView(this);
@@ -32,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements ThemeMvpView{
 
     @Override
     public void loadThemes(List<ThemeList.Theme> themes) {
-
+        textView.setText(themes.size());
     }
 
     @Override
